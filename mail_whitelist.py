@@ -5,9 +5,9 @@ class mail_whitelist(osv.Model):
 
     _columns = {
         'model_id': fields.many2one('ir.model', string="Model", required=True),
-        'create_log': fields.boolean(string="Create Logging"),
-        'create_subscribe': fields.boolean(string="Create Subscriptions"),
-        'create_track': fields.boolean(string="Create Tracking"),
+        'create_log': fields.boolean(string="Create Logging", help="Automatic logging unless asked not to (mainly for various testing purpose)"),
+        'create_subscribe': fields.boolean(string="Create Subscriptions", help="Subscribe user unless asked not to."),
+        'create_track': fields.boolean(string="Create Tracking", help="Automatic track values unless asked not to"),
     }
 
     _defaults = {
